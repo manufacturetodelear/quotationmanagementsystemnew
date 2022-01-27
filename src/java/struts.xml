@@ -1,0 +1,22 @@
+<!DOCTYPE struts PUBLIC
+"-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+"http://struts.apache.org/dtds/struts-2.0.dtd">
+
+<struts>
+    <include file="example.xml"/>
+    <!-- Configuration for the default package. -->
+    <package name="default" extends="struts-default">
+        <action name="adminLogin" class = "com.quotation.action.AdminAction" method = "adminLogin">
+            <result name = "failed">/adminlogin.jsp</result>
+            <result name = "Loggedin">/admindashboard.jsp</result>
+        </action>
+        <action name="dealerlogin" class = "com.quotation.action.DealerAction" method = "dealerLogin">
+            <result name = "Failed">/dealerlogin.jsp</result>
+            <result name = "LoggedIn">/dealerdashboard.jsp</result>
+        </action>
+        <action name="dealerRegister" class = "com.quotation.action.DealerAction" method = "dealerRegister">
+            <result name = "Failed">/landing.jsp</result>
+            <result name = "Registered">/dealerlogin.jsp</result>
+        </action>
+    </package>
+</struts>
